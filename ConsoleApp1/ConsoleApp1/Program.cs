@@ -40,6 +40,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            #region urok1
+
             int a = 235;
             int b = 152;
             int c = 0;
@@ -54,10 +56,10 @@ namespace ConsoleApp1
                 Console.WriteLine(c);
             }
             Console.ReadLine();
-
+            #endregion urok1
         }
 
 
-        
+
     }
 }
