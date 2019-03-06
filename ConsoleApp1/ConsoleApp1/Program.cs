@@ -17,7 +17,13 @@ namespace ConsoleApp1
         {
                
                   // сравниваем два числа если первое больше второго то меняем их местами
-                int[] mass =  { 5, 4, 3, 2, 1 };
+                int[] mass =  new int[7];
+            Console.WriteLine("Введите семь чисел");
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.Write("{0}-е число: ", i + 1);
+                mass[i] = Int32.Parse(Console.ReadLine());
+            }
             int c = 0;
             int f = 0;
             for (int t = 0; t < mass.Length; t++)
@@ -37,13 +43,18 @@ namespace ConsoleApp1
                         mass[i + 1] = c;
                         c = 0;
                     }
-                    Console.WriteLine($"после цикла i: {mass[i]}");
+                  
 
                 }
-                Console.WriteLine($" полсе  цикла t: {mass[t]}");
+              
+
             }
-          
-            Console.WriteLine($"спомошью всех ячеек {mass[0]} {mass[1]} {mass[2]} {mass[3]} {mass[4]}");
+            Console.WriteLine("Вывод отсортированного массива");
+            for (int i = 0; i < mass.Length; i++)
+            {
+                Console.WriteLine(mass[i]);
+            }
+            
             Console.ReadLine();
         }
 
