@@ -100,7 +100,7 @@ namespace ConsoleApp1
                     astr[i] = "Kitty";
                     
                 }
-                if (astr[i] == "Cats")
+                else if (astr[i] == "Cats")
                 {
                     astr[i] = "Kittys";
 
