@@ -15,15 +15,7 @@ namespace ConsoleApp1
 
         static public void Main(string[] args)
         {
-                /* // сортировки (написать пузырьком сортировку)  самому
-                 ЦИКЛ ДЛЯ J = 1 ДО N-1 ШАГ 1                       FOR J = 1 TO N-1 STEP 1
-                  F = 0                                             F = 0
-                  ЦИКЛ ДЛЯ I = 1 ДО N-J ШАГ 1                       FOR I = 1 TO N-J STEP 1
-                  ЕСЛИ A[I] > A[I + 1] ТО ОБМЕН A[I],A[I + 1]:F = 1     IF A[I]> A[I + 1] THEN SWAP A[I],A[I + 1]:F = 1
-                 СЛЕДУЮЩЕЕ I                                     NEXT I
-                  ЕСЛИ F = 0 ТО ВЫХОД ИЗ ЦИКЛА                      IF F = 0 THEN EXIT FOR
-                  СЛЕДУЮЩЕЕ J NEXT J
-                  */
+               
                   // сравниваем два числа если первое больше второго то меняем их местами
                 int[] mass =  { 5, 4, 3, 2, 1 };
             int c = 0;
@@ -45,13 +37,13 @@ namespace ConsoleApp1
                         mass[i + 1] = c;
                         c = 0;
                     }
-                  //  Console.WriteLine($"{mass[i]}");
+                    Console.WriteLine($"после цикла i: {mass[i]}");
 
                 }
-                Console.WriteLine(mass[t]);
+                Console.WriteLine($" полсе  цикла t: {mass[t]}");
             }
-
-
+          
+            Console.WriteLine($"спомошью всех ячеек {mass[0]} {mass[1]} {mass[2]} {mass[3]} {mass[4]}");
             Console.ReadLine();
         }
 
