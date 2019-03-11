@@ -8,45 +8,62 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static public int faindMin(int[] minmass)
+        {
+            int min = int.MaxValue;
+            for (int i = 0; i < minmass.Length; i++)
+            {
+                if (minmass[i] < min)
+                {
+                    min = minmass[i];
+                }
+            }
+            return min;
+        }
 
-       static public void ReplaceKitty(string ishod, string ishod_zamena, string zamena )
+        static public int[] faindMax(int[] mass)
         {
 
-            string result = "";
-            string[] ishodMass = ishod.Split(' ');
-            for (int i = 0; i < ishodMass.Length; i++)
+            int max = 0;
+            int index = 0;
+            for (int i =0; i<mass.Length; i++)
             {
-
-                if (ishodMass[i].ToLower() ==  ishod_zamena.ToLower())
+                
+                if(mass[i] > max)
                 {
-                    result += zamena + " ";
-
+                    max = mass[i];
+                    index = i;
                 }
                 
-               else
-                {
-                    result += ishodMass[i]+" ";
-                }
-               
-              
-            }
-             Console.WriteLine( result);
 
+            }
+            mass[index] = max * 10;
+
+            return mass;
         }
 
         static void Main(string[] args)
         {
-            ReplaceKitty("Cat dog Cats dogs","Cat dog","Kitty");
-            
-            
+            int[] a = { 1, -8, 0, 4 };
 
+        //    int[] b = faindMax(a);
+           
+
+            Console.WriteLine(faindMin(a)+"\n");
+
+
+            for (int i = 0; i < faindMax(a).Length; i++)
+            {
+                Console.WriteLine(faindMax(a)[i]);
+            }
+           
 
             Console.ReadLine();
         }
 
-        // поиск под строки в строке
-        // сортировки (написать пузырьком сортировку)  самому
-
+       
+        //перегрузка функциий 
+        // прочитать ОП
 
     }   
 }
