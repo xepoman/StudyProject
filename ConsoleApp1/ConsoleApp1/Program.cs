@@ -1,67 +1,56 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Создать иирархию менеджер работник 
+/// Maneger M1 1000
+/// Emploee E1 500
+/// Emploe E2 100
+/// Должность имя зарплата
+/// </summary>
 
 namespace ConsoleApp1
 {
     class Program
     {
-
        
-
-            
-
         static public void Main(string[] args)
         {
-               
-                  // сравниваем два числа если первое больше второго то меняем их местами
-                int[] mass =  new int[7];
-            Console.WriteLine("Введите семь чисел");
-            for (int i = 0; i < mass.Length; i++)
-            {
-                Console.Write("{0}-е число: ", i + 1);
-                mass[i] = Int32.Parse(Console.ReadLine());
-            }
-            int c = 0;
-            int f = 0;
-            for (int t = 0; t < mass.Length; t++)
-            {
-                for (int i = 0; i < mass.Length; i++)
-                {
-                    f = i + 1;
-                    if (f == mass.Length)
-                    {
-                        f = i;
+            Emploee emploee = new Emploee();
+            
+            
+           Console.WriteLine("Ведите имя менеджера: ");
+           Maneger maneger = new Maneger { NameMendger = Console.ReadLine() };
 
-                    }
-                    if (mass[i] > mass[f])
-                    {
-                        c = c + mass[i];
-                        mass[i] = mass[i + 1];
-                        mass[i + 1] = c;
-                        c = 0;
-                    }
-                  
+            Console.WriteLine("Ведите кол-во работников менеджера: ");
+            int quantityEmploee = Convert.ToInt32(Console.ReadLine());
+
+            int[] massEmploee = new int[quantityEmploee]; // масив кол-ва работников
+            if (quantityEmploee <= 0)
+            {
+                Console.WriteLine("У менеджера нет работяги");
+            }
+            for (int i = 0; i < massEmploee.Length; i++)
+            Maneger M1 = new Maneger("Igor","ivanov",30);
+            Emploee E1 = new Emploee("Vasia", "vasiliyev", 20);
+            Emploee E2 = new Emploee("Sveta", "puper", 22);
+            Emploee E3 = new Emploee("Nina", "truper", 33);
+            M1.Add(E2);
+            M1.Add(E3);
+
+            Console.WriteLine(M1.TypDate()+"\n"+E1.TypDate());  
+            for (int i =0; i<5;i++)
+            {
+                massEmploee[i] = i + 1;
+                if (massEmploee[i] == i + 1)
+                {
+
+                    Console.WriteLine($"Ведите имя Работника {i + 1}: ");
+                    string nameEmploee = Console.ReadLine();
+                    emploee.voodEmploee(nameEmploee, quantityEmploee, i);
 
                 }
-              
-
+                Console.WriteLine(M1.doo[i]);
             }
-            Console.WriteLine("Вывод отсортированного массива");
-            for (int i = 0; i < mass.Length; i++)
-            {
-                Console.WriteLine(mass[i]);
-            }
-            
-            Console.ReadLine();
-        }
-
-
-
-       
-
-
-    }   
-}
