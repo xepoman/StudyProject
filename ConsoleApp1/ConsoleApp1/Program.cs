@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,14 +11,11 @@ using System.Threading.Tasks;
 /// Должность имя зарплата
 /// </summary>
 
-
-
 namespace ConsoleApp1
 {
     class Program
     {
        
-
         static public void Main(string[] args)
         {
             Emploee emploee = new Emploee();
@@ -57,15 +54,3 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine(M1.doo[i]);
             }
-
-
-            maneger.Display(); // вывели имя менеджера
-                                                                              
-            emploee.Display(quantityEmploee);       
-                                 
-           
-            Console.ReadKey();
-        }      
-       
-    }   
-}
