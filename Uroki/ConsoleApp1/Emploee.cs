@@ -23,12 +23,12 @@ namespace ConsoleApp1
         }
 
         public string TypDate()
-            {
+        {
             return this.name + " " + this.surname + " " + this.age + " " + this.GetType().Name;
-            }
-        
+        }
 
-        
+
+
 
     }
 }

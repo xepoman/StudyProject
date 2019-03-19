@@ -8,21 +8,21 @@ namespace ConsoleApp1
 {
     class Maneger : Emploee
     {
-       public string[] doo = new string[5];
-       
-        public Maneger(string name,string surname,int age)
-            : base(name,surname,age)
+        public string[] doo = new string[5];
+
+        public Maneger(string name, string surname, int age)
+            : base(name, surname, age)
         {
 
         }
 
         public void Add(Emploee newEmploee)
         {
-            if(doo ==null )
+            if (doo == null)
             {
                 this.doo = new string[10];
             }
-            for (int i = 0; i<doo.Length;i++)
+            for (int i = 0; i < doo.Length; i++)
             {
 
                 if (doo[i] == null)
@@ -30,10 +30,10 @@ namespace ConsoleApp1
                     this.doo[i] = newEmploee.TypDate();
                     break;
                 }
-                
+
             }
 
         }
-        
+
     }
 }
