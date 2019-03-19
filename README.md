@@ -1,2 +1,0 @@
-# StudyProject
-Для учебы
