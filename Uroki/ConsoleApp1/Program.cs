@@ -24,14 +24,11 @@ namespace ConsoleApp1
             Emploee E1 = new Emploee("Vasia", "vasiliyev", 20);
             Emploee E2 = new Emploee("Sveta", "puper", 22);
             Emploee E3 = new Emploee("Nina", "truper", 33);
-            M1.Add(E2);
-            M1.Add(E3);
+            M1.Add(E1.GetData());
+            M1.Add(E2.GetData());
 
-            Console.WriteLine(M1.TypDate() + "\n" + E1.TypDate());
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(M1.doo[i]);
-            }
+            Console.WriteLine(M1.GetData());
+            
             Console.ReadKey();
         }
 

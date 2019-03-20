@@ -8,32 +8,37 @@ namespace ConsoleApp1
 {
     class Maneger : Emploee
     {
-        public string[] doo = new string[5];
-
+        string[] emploees = new string[1];
+        int lastNull = 0;
         public Maneger(string name, string surname, int age)
             : base(name, surname, age)
         {
 
         }
 
-        public void Add(Emploee newEmploee)
+        public void Add(string data)
         {
-            if (doo == null)
+            if (emploees[emploees.Length-1] != null)
             {
-                this.doo = new string[10];
-            }
-            for (int i = 0; i < doo.Length; i++)
-            {
-
-                if (doo[i] == null)
+                this.lastNull = emploees.Length;
+                string[] temp_emploees = new string[emploees.Length+5];
+                for (int t = 0; t < this.emploees.Length; t++)
                 {
-                    this.doo[i] = newEmploee.TypDate();
-                    break;
+                    temp_emploees[t] = this.emploees[t];
                 }
-
+                this.emploees = temp_emploees;               
             }
-
+            this.emploees[lastNull] = data;
+            lastNull++;
         }
-
+        public override string GetData()
+        {
+            string output = base.GetData()+ "\n";
+            for (int i=0;i<this.lastNull;i++)
+            {
+                output += "\t-- "+this.emploees[i]+"\n"; 
+            }
+            return output;
+        }
     }
 }

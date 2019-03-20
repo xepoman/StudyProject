@@ -22,7 +22,7 @@ namespace ConsoleApp1
             this.age = age;
         }
 
-        public string TypDate()
+        public virtual string GetData()
         {
             return this.name + " " + this.surname + " " + this.age + " " + this.GetType().Name;
         }
