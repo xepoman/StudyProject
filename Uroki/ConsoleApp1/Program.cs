@@ -28,11 +28,11 @@ namespace ConsoleApp1
             Emploee E1 = new Emploee("Vasia", "vasiliyev", 20);
             Emploee E2 = new Emploee("Sveta", "puper", 22);
             Emploee E3 = new Emploee("Nina", "truper", 33);
-            M1.Add(E1.GetData());
-            M1.Add(E2.GetData());
-            M1.Add(M2.GetData());
-            M1.Add(M3.GetData());
-
+            M1.Add(E1);
+            M1.Add(E2);
+            M1.Add(M2);
+            M1.Add(M3);
+            M2.Add(E3);
             Console.WriteLine(M1.GetData());
             Console.ReadKey();
         }
