@@ -20,12 +20,18 @@ namespace ConsoleApp1
             emploees.Add(e);
         }
          
-        public override string GetData()
+        public override string GetData(int tab_count)
         {
-            string output = base.GetData() + "\n";
+            
+            string output = base.GetData(tab_count);
             for (int i = 0; i < emploees.Count; i++)
             {
-              output += "\t--- "  + emploees[i].GetData()+ "\n";  
+              output += "\t--- "  + emploees[i].GetData(
+                    emploees[i].GetType().Name == "Maneger" ? 
+                    tab_count+1:
+                    tab_count
+                    );  
+                
             }
             return output;
         }

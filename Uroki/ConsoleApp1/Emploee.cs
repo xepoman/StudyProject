@@ -22,9 +22,9 @@ namespace ConsoleApp1
             this.age = age;
         }
 
-        public virtual string GetData()
+        public virtual string GetData(int tab_count)
         {
-            return this.name + " " + this.surname + " " + this.age + " " + this.GetType().Name;
+            return this.name + " " + this.surname + " " + this.age + " " + this.GetType().Name + "\n";
         }
 
 

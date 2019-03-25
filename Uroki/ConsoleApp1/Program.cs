@@ -24,7 +24,7 @@ namespace ConsoleApp1
         {
             Maneger M1 = new Maneger("Igor", "ivanov", 30);
             Maneger M2 = new Maneger("serega", "sergeev", 34);
-            Maneger M3 = new Maneger("niga", "abama", 34);
+            Maneger M3 = new Maneger("petya", "abama", 34);
             Emploee E1 = new Emploee("Vasia", "vasiliyev", 20);
             Emploee E2 = new Emploee("Sveta", "puper", 22);
             Emploee E3 = new Emploee("Nina", "truper", 33);
@@ -33,7 +33,7 @@ namespace ConsoleApp1
             M1.Add(M2);
             M1.Add(M3);
             M2.Add(E3);
-            Console.WriteLine(M1.GetData());
+            Console.WriteLine(M1.GetData(1));
             Console.ReadKey();
         }
 
