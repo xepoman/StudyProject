@@ -15,25 +15,24 @@ namespace ConsoleApp1
         protected string surname;
         protected int age;
         protected float stag;
-        
+        Random r = new Random();
 
         public Emploee(string name, string surname, int age)
         {
-            Random r = new Random();
             this.name = name;
             this.surname = surname;
             this.age = age;
-            this.stag = r.Next(0, 50);
         }
 
         public virtual string GetData(int tab_count)
         {
+            this.stag = r.Next(age);
             return this.name + " "
                 + this.surname + " "
                 + this.age + " "
                 + "stag: " + this.stag + " "
-                + this.GetType().Name
-              //  + Salary.aaaa + " "
+                + this.GetType().Name +" "
+                + "salary: " + Salary.getSalary(this.age, this.stag, GetType().Name) + " "
                 + "\n";
         }
 
