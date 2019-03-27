@@ -13,26 +13,29 @@ namespace ConsoleApp1
 
         protected string name;
         protected string surname;
-        protected int age;
-        protected float stag;
+        static protected int age;
+        static protected float stag;
+        static protected string dolgnost;
         Random r = new Random();
+        Salary sal1 = new Salary(age, stag, dolgnost);
 
-        public Emploee(string name, string surname, int age)
+        public Emploee(string name, string surname, int age1)
         {
             this.name = name;
             this.surname = surname;
-            this.age = age;
+            age = age1;
+            stag = r.Next(age);
         }
 
         public virtual string GetData(int tab_count)
         {
-            this.stag = r.Next(age);
+            dolgnost = GetType().Name;
             return this.name + " "
                 + this.surname + " "
-                + this.age + " "
-                + "stag: " + this.stag + " "
+                + age + " "
+                + "stag: " + stag + " "
                 + this.GetType().Name +" "
-                + "salary: " + Salary.getSalary(this.age, this.stag, GetType().Name) + " "
+                + "salary: " + sal1.getSalary(sal1) + " "
                 + "\n";
         }
 

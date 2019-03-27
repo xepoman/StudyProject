@@ -13,10 +13,20 @@ namespace ConsoleApp1
 {
     class Salary
     {
+        int age;
+        float stag;
+        string dolgnost;
         const float stavka = 4000.0f;
-        
 
-        static public float getSalary(int age, float stag, string dolgnost)
+        public Salary(int age, float stag, string dolgnost)
+        {
+           
+            this.age = age;
+            this.stag = stag;
+            this.dolgnost = dolgnost;
+        }
+
+        public float getSalary(Salary salary)
         {
             float zp = 0.0f;
             if (dolgnost == "Maneger")
