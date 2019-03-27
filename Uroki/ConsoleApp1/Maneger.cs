@@ -22,11 +22,10 @@ namespace ConsoleApp1
          
         public override string GetData(int tab_count)
         {
-            string tabul = new string('\t', tab_count);
             string output = base.GetData(tab_count);
             for (int i = 0; i < emploees.Count; i++)
             {
-              output += tabul +"--- "  + emploees[i].GetData(
+              output += Tabul('\t', tab_count) + "--- "  + emploees[i].GetData(
                     emploees[i].GetType().Name == "Maneger" ? 
                     tab_count+1:
                     tab_count
@@ -34,6 +33,16 @@ namespace ConsoleApp1
                 
             }
             return output;
+        }
+
+        public string Tabul(char ch, int count)
+        {
+            string tabul = "";
+            for (int i =0; i<count; i++)
+            {
+                tabul += ch;
+            }
+            return tabul;
         }
     }
 }
