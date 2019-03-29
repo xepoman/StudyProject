@@ -13,23 +13,12 @@ namespace ConsoleApp1
 {
     class Salary
     {
-        int age;
-        float stag;
-        string dolgnost;
         const float stavka = 4000.0f;
-
-        public Salary(int age, float stag, string dolgnost)
-        {
-           
-            this.age = age;
-            this.stag = stag;
-            this.dolgnost = dolgnost;
-        }
-
-        public float getSalary(Salary salary)
+        
+        static public float getSalary(Emploee e)
         {
             float zp = 0.0f;
-            if (dolgnost == "Maneger")
+            if (e.GetType().Name == "Maneger")
             {
                 zp = stavka + stavka * 0.3f;
             }
@@ -37,11 +26,11 @@ namespace ConsoleApp1
             {
                 zp = stavka;
             }
-            if(age > 50)
+            if(e.age > 50)
             {
                 zp += stavka * 2f;
             }
-            if(stag > 5)
+            if(e.stag > 5)
             {
                 zp += stavka * 0.5f;
             }
