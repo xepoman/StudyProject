@@ -93,11 +93,6 @@ namespace ConsoleApp1
 
             }
             else if (Exit == "Y");
-
-
-            /*  Console.WriteLine("Ведите 1 если хотите выйти: ");
-              exit = Console.ReadLine();
-          }*/
         }
     }
 }
