@@ -44,46 +44,36 @@ namespace ConsoleApp1
         }
       static public void svoistvaManeger(Maneger M)
       {
-            
             string name;
             string surname;
             int age;
-            string Exit;
-            Console.Write("Хотите выйти? Если Да нажмите Y:");
-            Exit = Console.ReadLine();
+            string Exit = "e";
+            
 
             while (Exit != "Y")
             {
+                Console.Write("Хотите выйти? Если Да нажмите Y:");
+                Exit = Console.ReadLine();
+                Console.Write($"[{M.name}] Введите имя: ");
+                name = Console.ReadLine();
+
+                Console.Write($"[{M.name}] Введите фамилию: ");
+                surname = Console.ReadLine();
+
+                Console.Write($"[{M.name}] Введите возраст: ");
+                age = Convert.ToInt32(Console.ReadLine());
+
                 Console.Write("Введите должность М / Е: ");
                 string dolgnost = Console.ReadLine();
 
                 if (dolgnost.ToLower() == "m")
                 {
-                    Console.Write("Введите имя менеджера: ");
-                    name = Console.ReadLine();
-
-                    Console.Write("Введите фамилию менеджкра: ");
-                    surname = Console.ReadLine();
-
-                    Console.Write("Введите возраст менеджера: ");
-                    age = Convert.ToInt32(Console.ReadLine());
-
                     Maneger M2 = new Maneger(name, surname, age);
                     M.Add(M2);
                     svoistvaManeger(M2);
-
                 }
                 else if (dolgnost.ToLower() == "e")
                 {
-                    Console.Write($"[{M.name}] Введите имя работника: ");
-                    name = Console.ReadLine();
-
-                    Console.Write($"[{M.name}] Введите фамилию работника: ");
-                    surname = Console.ReadLine();
-
-                    Console.Write($"[{M.name}] Введите возраст работника: ");
-                    age = Convert.ToInt32(Console.ReadLine());
-
                     Emploee E1 = new Emploee(name, surname, age);
                     M.Add(E1);
                     Console.WriteLine();
