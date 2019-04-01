@@ -12,6 +12,7 @@ using System.Collections;
 /// Должность имя зарплата
 /// 
 /// создать добавление бесконечных менеджеров и работников
+/// сделать рекурсию для удаления обьектов
 /// </summary>
 
 
@@ -40,7 +41,18 @@ namespace ConsoleApp1
               M2.Add(E3);*/
 
             Console.WriteLine(M1.GetData(0));
+
+            Console.Write("Введите индекс для удаления: ");
+            int index = Convert.ToInt32(Console.ReadLine());
+            Console.Write($"Удалить: {M1.getEmploeebyId(index)} ?");
+            DeleteEmploe(M1, index);
+
             Console.ReadKey();
+        }
+
+        static public void DeleteEmploe(Maneger M, int index)
+        {
+           M.Delete(index);
         }
       static public void svoistvaManeger(Maneger M)
       {

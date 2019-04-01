@@ -15,6 +15,14 @@ namespace ConsoleApp1
         {
 
         }
+        public string getEmploeebyId(int index)
+        {
+            return emploees[index].GetData(0);
+        }
+        public void Delete(int index)
+        {
+            emploees.RemoveAt(index);
+        }
         public void Add(Emploee e)
         {
             emploees.Add(e);
@@ -25,7 +33,8 @@ namespace ConsoleApp1
             string output = base.GetData(tab_count);
             for (int i = 0; i < emploees.Count; i++)
             {
-              output += Tabul('\t', tab_count) + "--- "  + emploees[i].GetData(
+              output += Tabul('\t', tab_count) + $"[{i}] "  
+                    + emploees[i].GetData(
                     emploees[i].GetType().Name == "Maneger" ? 
                     tab_count+1:
                     tab_count
