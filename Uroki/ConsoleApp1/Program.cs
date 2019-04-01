@@ -44,27 +44,21 @@ namespace ConsoleApp1
         }
       static public void svoistvaManeger(Maneger M)
       {
-            string name;
-            string surname;
-            int age;
-            string Exit = "e";
-            
+            string Exit = "y";
 
-            while (Exit != "Y")
+            while (Exit.ToLower() == "y")
             {
-                Console.Write("Хотите выйти? Если Да нажмите Y:");
-                Exit = Console.ReadLine();
-                Console.Write($"[{M.name}] Введите имя: ");
-                name = Console.ReadLine();
-
-                Console.Write($"[{M.name}] Введите фамилию: ");
-                surname = Console.ReadLine();
-
-                Console.Write($"[{M.name}] Введите возраст: ");
-                age = Convert.ToInt32(Console.ReadLine());
-
                 Console.Write("Введите должность М / Е: ");
                 string dolgnost = Console.ReadLine();
+
+                Console.Write($"[{M.name}] Введите имя: ");
+                string name = Console.ReadLine();
+
+                Console.Write($"[{M.name}] Введите фамилию: ");
+                string surname = Console.ReadLine();
+
+                Console.Write($"[{M.name}] Введите возраст: ");
+                int age = Convert.ToInt32(Console.ReadLine());
 
                 if (dolgnost.ToLower() == "m")
                 {
@@ -78,6 +72,9 @@ namespace ConsoleApp1
                     M.Add(E1);
                     Console.WriteLine();
                 }
+
+                Console.Write($"Ввести еше работников для {M.name} ? ");
+                Exit = Console.ReadLine();
             }
       }
     }
