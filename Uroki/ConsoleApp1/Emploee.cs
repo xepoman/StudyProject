@@ -11,7 +11,7 @@ namespace ConsoleApp1
     class Emploee
     {
 
-        protected string name;
+        public string name;
         protected string surname;
         public int age;
         public float stag;

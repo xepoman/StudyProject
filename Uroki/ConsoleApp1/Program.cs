@@ -21,10 +21,10 @@ namespace ConsoleApp1
     class Program
     {
 
-        static public Maneger M1 = new Maneger("Igor", "ivanov", 30);
-
+        
         static public void Main(string[] args)
         {
+            Maneger M1 = new Maneger("Igor", "ivanov", 30);
 
             svoistvaManeger(M1);
 
@@ -52,12 +52,12 @@ namespace ConsoleApp1
             Console.Write("Хотите выйти? Если Да нажмите Y:");
             Exit = Console.ReadLine();
 
-            if (Exit != "Y")
+            while (Exit != "Y")
             {
                 Console.Write("Введите должность М / Е: ");
                 string dolgnost = Console.ReadLine();
 
-                if (dolgnost == "M" || dolgnost == "m")
+                if (dolgnost.ToLower() == "m")
                 {
                     Console.Write("Введите имя менеджера: ");
                     name = Console.ReadLine();
@@ -73,26 +73,22 @@ namespace ConsoleApp1
                     svoistvaManeger(M2);
 
                 }
-                else if (dolgnost == "Е" || dolgnost == "e")
+                else if (dolgnost.ToLower() == "e")
                 {
-                    Console.Write("Введите имя работника М1 : ");
+                    Console.Write($"[{M.name}] Введите имя работника: ");
                     name = Console.ReadLine();
 
-                    Console.Write("Введите фамилию работника М1 : ");
+                    Console.Write($"[{M.name}] Введите фамилию работника: ");
                     surname = Console.ReadLine();
 
-                    Console.Write("Введите возраст работника М1 : ");
+                    Console.Write($"[{M.name}] Введите возраст работника: ");
                     age = Convert.ToInt32(Console.ReadLine());
 
                     Emploee E1 = new Emploee(name, surname, age);
                     M.Add(E1);
-                    Console.WriteLine("работник создан");
-                    svoistvaManeger(M);
+                    Console.WriteLine();
                 }
-
-
             }
-            else if (Exit == "Y");
-        }
+      }
     }
 }
