@@ -19,6 +19,7 @@ namespace ConsoleApp1
         {
             return emploees[index].GetData(0);
         }
+        
         public void Delete(int index)
         {
             emploees.RemoveAt(index);

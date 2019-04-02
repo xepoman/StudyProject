@@ -27,7 +27,7 @@ namespace ConsoleApp1
         {
             Maneger M1 = new Maneger("Igor", "ivanov", 30);
 
-            svoistvaManeger(M1);
+            SvoistvaManeger(M1);
 
             /*  Maneger M2 = new Maneger("serega", "sergeev", 34);
               Maneger M3 = new Maneger("petya", "abama", 54);
@@ -42,19 +42,43 @@ namespace ConsoleApp1
 
             Console.WriteLine(M1.GetData(0));
 
-            Console.Write("Введите индекс для удаления: ");
-            int index = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Удалить: {M1.getEmploeebyId(index)} ?");
-            DeleteEmploe(M1, index);
+            Wod(M1);
+
+            Console.WriteLine(M1.GetData(0));
 
             Console.ReadKey();
         }
+        static public void Wod(Maneger M)
+        {
+            Console.Write("Выберети индекс для удаления: ");
+            int index = Convert.ToInt32(Console.ReadLine());
+            Console.Write($"Вы выбрали: {M.getEmploeebyId(index)} ?");
+           
+            Console.Write("Удалить? ");
+            string udalit = Console.ReadLine();
+            if (udalit.ToLower() == "y")
+            {
+                DeleteEmploe(M, index);
+            }
+            else
+            {
+                Console.Write("Продолжить? ");
+                string prodolgit = Console.ReadLine();
+                if (prodolgit.ToLower() == "y")
+                {
+                    
+                    Wod(M);
+                }
+            }
+            
+        }
+
 
         static public void DeleteEmploe(Maneger M, int index)
         {
            M.Delete(index);
         }
-      static public void svoistvaManeger(Maneger M)
+      static public void SvoistvaManeger(Maneger M)
       {
             string Exit = "y";
 
@@ -76,7 +100,7 @@ namespace ConsoleApp1
                 {
                     Maneger M2 = new Maneger(name, surname, age);
                     M.Add(M2);
-                    svoistvaManeger(M2);
+                    SvoistvaManeger(M2);
                 }
                 else if (dolgnost.ToLower() == "e")
                 {
