@@ -17,7 +17,11 @@ namespace ConsoleApp1
         }
         public string getEmploeebyId(int index)
         {
-            return emploees[index].GetData(0);
+            if(index>0)
+            {
+                getEmploeebyId(index - 1);
+            }
+            return emploees[index].GetType().Name;
         }
         
         public void Delete(int index)
