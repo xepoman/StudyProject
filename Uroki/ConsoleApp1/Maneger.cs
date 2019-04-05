@@ -9,19 +9,16 @@ namespace ConsoleApp1
 {
     class Maneger : Emploee
     {
-        List<Emploee> emploees = new List<Emploee>();      
+        public List<Emploee> emploees = new List<Emploee>();      
         public Maneger(string name, string surname, int age)
             : base(name, surname, age)
         {
 
         }
-        public string getEmploeebyId(int index)
+        public Emploee getEmploeebyId(int index)
         {
-            if(index>0)
-            {
-                getEmploeebyId(index - 1);
-            }
-            return emploees[index].GetType().Name;
+            
+            return emploees[index];
         }
         
         public void Delete(int index)

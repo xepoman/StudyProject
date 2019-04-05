@@ -52,32 +52,17 @@ namespace ConsoleApp1
         {
             Console.Write("Выберети индекс для удаления: ");
             int index = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Вы выбрали: {M.getEmploeebyId(index)} ?");
-           
+            Emploee E = M.getEmploeebyId(index);
+            Console.Write($"Вы выбрали: \n {M.getEmploeebyId(index)} ?");
+    
             Console.Write("Удалить? ");
             string udalit = Console.ReadLine();
-            if (udalit.ToLower() == "y")
+            while (udalit.ToLower() != "y")
             {
-                DeleteEmploe(M, index);
+                Wod((Maneger)E);
             }
-            else
-            {
-                Console.Write("Продолжить? ");
-                string prodolgit = Console.ReadLine();
-                if (prodolgit.ToLower() == "y")
-                {
-                    
-                    Wod(M);
-                }
-            }
-            
         }
 
-
-        static public void DeleteEmploe(Maneger M, int index)
-        {
-           M.Delete(index);
-        }
       static public void SvoistvaManeger(Maneger M)
       {
             string Exit = "y";
