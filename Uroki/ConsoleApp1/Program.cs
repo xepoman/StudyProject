@@ -50,16 +50,27 @@ namespace ConsoleApp1
         }
         static public void Wod(Maneger M)
         {
-            Console.Write("Выберети индекс для удаления: ");
-            int index = Convert.ToInt32(Console.ReadLine());
-            Emploee E = M.getEmploeebyId(index);
-            Console.Write($"Вы выбрали: \n {M.getEmploeebyId(index)} ?");
-    
-            Console.Write("Удалить? ");
-            string udalit = Console.ReadLine();
-            while (udalit.ToLower() != "y")
+            string Exit = "y";
+
+            while (Exit.ToLower() == "y")
             {
-                Wod((Maneger)E);
+                Console.Write("Выберети индекс для удаления: ");
+                int index = Convert.ToInt32(Console.ReadLine());
+                Emploee E = M.getEmploeebyId(index);
+                Console.Write($"Вы выбрали: \n {M.emploees[index].GetData(0)} ");
+
+                Console.Write("Удалить? ");
+                string udalit = Console.ReadLine();
+                if (udalit.ToLower() != "y")
+                {
+                    Wod((Maneger)E);
+                }
+                else
+                {
+                    M.Delete(index);
+                }
+                Console.Write($"Продолжить? ");
+                Exit = Console.ReadLine();
             }
         }
 
